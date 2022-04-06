@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/YouTubeAndInstagramMediaDownload.styles.css" asp-append-version="true" />
+</head>
+<body>
+        <!-- Header -->
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">𝓜𝓢</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" asp-controller="Home" asp-action="Index">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" asp-controller="Youtube" asp-action="Index">YouTube</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" asp-controller="Instagram" asp-action="Index" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Instagram</a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li><a class="dropdown-item" asp-controller="Instagram" asp-action="Photo">Photo Download</a></li>
+            <li><a class="dropdown-item" asp-controller="Instagram" asp-action="Video">Video Download</a></li>
+          </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+        <!-- Header -->
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" target="_blank" href="https://www.facebook.com/murad.agazade.528" role="button">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <!-- WhatsApp -->
+                <a class="btn btn-outline-light btn-floating m-1" target="_blank" href="https://api.whatsapp.com/send?phone=994555549824" role="button">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-outline-light btn-floating m-1" target="_blank" href="https://www.linkedin.com/in/murad-agazade-34a5a7229/" role="button">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+
+                <!-- Github -->
+                <a class="btn btn-outline-light btn-floating m-1" target="_blank" href="https://github.com/MuradAga" role="button">
+                    <i class="fab fa-github"></i>
+                </a>
+            </section>
+            <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            MuradinSayti © 2022. All rights reserved.
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

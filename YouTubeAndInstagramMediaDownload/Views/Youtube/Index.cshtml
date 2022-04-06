@@ -1,0 +1,15 @@
+﻿@using YouTubeAndInstagramMediaDownload.Models
+@{
+    ViewData["Title"] = "YouTube Video";
+}
+@model VideoModel
+    <link rel="stylesheet" href="~/css/mediaDownload.css" asp-append-version="true" />
+
+<form asp-controller="Youtube" asp-action="Download" method="post">
+    <div class="input-group mb-3">
+        <input asp-for="Url" type="text" class="form-control" placeholder="Paste YouTube link" aria-label="Paste YouTube link" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit">Download</button>
+        </div>
+    </div>
+</form>
